@@ -1,0 +1,91 @@
+<html>
+        <head>
+                
+<link rel="stylesheet" type="text/css" href="http://127.0.0.1:8001/style-vis.css"/>
+        </head>
+        
+        <script type="text/javascript" src="http://127.0.0.1:8001/client/lib/head.load.min.js">
+        </script>
+        
+        <script>
+        
+        var bratLocation = 'http://127.0.0.1:8001';
+head.js(
+    // External libraries
+    bratLocation + '/client/lib/jquery.min.js',
+    bratLocation + '/client/lib/jquery.svg.min.js',
+    bratLocation + '/client/lib/jquery.svgdom.min.js',
+
+    // brat helper modules
+    bratLocation + '/client/src/configuration.js',
+    bratLocation + '/client/src/util.js',
+    bratLocation + '/client/src/annotation_log.js',
+    bratLocation + '/client/lib/webfont.js',
+
+    // brat modules
+    bratLocation + '/client/src/dispatcher.js',
+    bratLocation + '/client/src/url_monitor.js',
+    bratLocation + '/client/src/visualizer.js'
+);
+
+var webFontURLs = [
+    bratLocation + '/static/fonts/Astloch-Bold.ttf',
+    bratLocation + '/static/fonts/PT_Sans-Caption-Web-Regular.ttf',
+    bratLocation + '/static/fonts/Liberation_Sans-Regular.ttf'
+];
+
+
+        
+head.ready(function() {
+    Util.embed(
+        // id of the div element where brat should embed the visualisations
+        'div_id',
+        // object containing collection data
+        collData,
+        // object containing document data
+        docData,
+        // Array containing locations of the visualisation fonts
+        webFontURLs
+        );
+});
+
+
+
+
+
+        </script>
+        <body >
+
+<form action="."method="POST">
+ <p>Choose the task you want to do</p>
+
+<select name="task">
+
+<option value="stem">Stemming</option>
+<option value="pos">POS</option>
+<option value="ner">NER</option>
+<option value="lem">Lemmatize</option>
+
+
+</select>
+
+
+<p></p>
+
+PLEASE ENTER THE TEXT IN THE TEXT AREA:
+<p></p>
+<textarea rows="20" cols="60" name="text_body"></textarea>
+
+<p></p>
+<input type="submit"name="submit" value="submit"/>
+</form>
+
+</body>
+
+        <script>
+        <script src="{{ url_for('static',filename='samp.js')}}">
+        </script>
+        
+        <div id="div_id">
+        </div>
+</html>

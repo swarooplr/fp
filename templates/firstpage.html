@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="first.css">
+<script>
+function populate(s1,s2){
+	var s1 = document.getElementById(s1);
+	var s2 = document.getElementById(s2);
+	s2.innerHTML = "";
+	if(s1.value == "English"){
+		var optionArray = ["pos|POSTAG","ner|NER","lem|Lemmatize","stem|Stemming","wordnet|wordnet"];
+	} else if(s1.value == "Kannada"){
+		var optionArray = ["spl|Sandhi","txtsum|TextSummarize","gnd|GenderClassify"];
+	}
+
+
+		for(var option in optionArray){
+		var pair = optionArray[option].split("|");
+		var newOption = document.createElement("option");
+		newOption.value = pair[0];
+		newOption.innerHTML = pair[1];
+		s2.options.add(newOption);
+	}
+}
+</script>
+</head>
+<body>
+<h2>Namaskara</h2>
+<hr />
+
+   <form action="."method="POST">
+
+   <textarea rows="10" cols="60" name="text_body"></textarea>
+<div>
+select your language:
+<select id="language" name="Language" onchange="populate(this.id,'tasks')">
+  <option value=""></option>
+  <option value="English">English</option>
+  <option value="Kannada">Kannada</option>
+
+</select>
+<hr />
+Choose the task:
+<select id="tasks" name="tasks"></select>
+
+ <input type="submit" name="submit" value="submit"/>
+
+</form>
+
+</div>
+<hr />
+</body>
+</html>
