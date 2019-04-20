@@ -3,6 +3,8 @@ from english_annotators.postagging import pos
 from english_annotators.ner import process_content
 from english_annotators.stemming import stem
 from english_annotators.lemmtize import lem
+from english_annotators.postagging import pos
+from kannada_annotators.postagging import pos as kn_pos
 
 app = Flask(__name__,static_url_path="")
 app._static_folder = "static"
@@ -24,7 +26,7 @@ def getvalue():
         if request.method=='POST':
             task = request.form['tasks']
             if task=="pos":
-                tagged=pos(textval)
+                tagged=kn_pos(textval)
                 return render_template("disp.html", text=tagged)
             elif task=="ner":
                 nertagged=process_content(textval)

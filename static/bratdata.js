@@ -1,52 +1,36 @@
 var collData = {
     "entity_types": [
         {
-            "bgColor": "#9370DB", 
+            "bgColor": "#ADFF2F", 
             "borderColor": "darken", 
             "labels": [
-                "NN"
+                "V__VM__VF"
             ], 
-            "type": "NN"
+            "type": "V__VM__VF"
         }, 
         {
-            "bgColor": "#F4A460", 
+            "bgColor": "#F0FFF0", 
             "borderColor": "darken", 
             "labels": [
-                "."
+                "N__NN"
             ], 
-            "type": "."
+            "type": "N__NN"
         }, 
         {
-            "bgColor": "#008B8B", 
+            "bgColor": "#FF6347", 
             "borderColor": "darken", 
             "labels": [
-                "IN"
+                "DM__DMD"
             ], 
-            "type": "IN"
-        }, 
-        {
-            "bgColor": "#FF4500", 
-            "borderColor": "darken", 
-            "labels": [
-                "VBZ"
-            ], 
-            "type": "VBZ"
+            "type": "DM__DMD"
         }, 
         {
             "bgColor": "#FF00FF", 
             "borderColor": "darken", 
             "labels": [
-                "DT"
+                "V__VM__VNF"
             ], 
-            "type": "DT"
-        }, 
-        {
-            "bgColor": "#F4A460", 
-            "borderColor": "darken", 
-            "labels": [
-                "NNS"
-            ], 
-            "type": "NNS"
+            "type": "V__VM__VNF"
         }
     ]
 };
@@ -54,84 +38,84 @@ var docData = {
     "entities": [
         [
             "T0", 
-            "DT", 
+            "DM__DMD", 
             [
                 [
                     0, 
-                    4
+                    1
                 ]
             ]
         ], 
         [
             "T1", 
-            "VBZ", 
+            "N__NN", 
             [
                 [
-                    5, 
-                    7
+                    2, 
+                    8
                 ]
             ]
         ], 
         [
             "T2", 
-            "DT", 
+            "V__VM__VNF", 
             [
                 [
-                    8, 
-                    10
-                ]
-            ]
-        ], 
-        [
-            "T3", 
-            "NN", 
-            [
-                [
-                    11, 
-                    18
-                ]
-            ]
-        ], 
-        [
-            "T4", 
-            "IN", 
-            [
-                [
-                    19, 
+                    9, 
                     21
                 ]
             ]
         ], 
         [
-            "T5", 
-            "NN", 
+            "T3", 
+            "N__NN", 
             [
                 [
                     22, 
-                    27
+                    29
+                ]
+            ]
+        ], 
+        [
+            "T4", 
+            "N__NN", 
+            [
+                [
+                    30, 
+                    34
+                ]
+            ]
+        ], 
+        [
+            "T5", 
+            "N__NN", 
+            [
+                [
+                    35, 
+                    42
                 ]
             ]
         ], 
         [
             "T6", 
-            "NNS", 
+            "V__VM__VNF", 
             [
                 [
-                    28, 
-                    35
+                    43, 
+                    51
                 ]
             ]
         ], 
         [
             "T7", 
-            ".", 
+            "V__VM__VF", 
             [
                 [
-                    35, 
-                    36
+                    52, 
+                    56
                 ]
             ]
         ]
     ], 
-    "text": "This is an example of jatre colours."
+    "text": "\u0c86 \u0c9c\u0cbf\u0c82\u0c95\u0cc7\u0ca8 \u0c85\u0c9f\u0ccd\u0c9f\u0cbf\u0cb8\u0cbf\u0c95\u0cca\u0c82\u0ca1\u0cc1 \u0cae\u0ca8\u0cc6\u0caf\u0cbf\u0c82\u0ca6 \u0c92\u0ca1\u0cb5\u0cc6 \u0ca6\u0cc2\u0cb0\u0c95\u0ccd\u0c95\u0cc6 \u0c95\u0cb0\u0ccd\u0c95\u0cca\u0c82\u0ca1\u0cc1 \u0cb9\u0ccb\u0c97\u0cbf"
 };
