@@ -1,36 +1,52 @@
 var collData = {
     "entity_types": [
         {
-            "bgColor": "#ADFF2F", 
+            "bgColor": "#DCDCDC", 
             "borderColor": "darken", 
             "labels": [
-                "V__VM__VF"
+                "\u0c96\u0c9a\u0cbf\u0ca4 \u0c86\u0c97\u0cbf\u0ca6\u0cc6 "
             ], 
-            "type": "V__VM__VF"
+            "type": "\u0c96\u0c9a\u0cbf\u0ca4 \u0c86\u0c97\u0cbf\u0ca6\u0cc6 "
         }, 
         {
-            "bgColor": "#F0FFF0", 
+            "bgColor": "#4169E1", 
             "borderColor": "darken", 
             "labels": [
-                "N__NN"
+                "\u0c95\u0cb0\u0cc6 \u0ca4\u0cb0\u0cc1 "
             ], 
-            "type": "N__NN"
+            "type": "\u0c95\u0cb0\u0cc6 \u0ca4\u0cb0\u0cc1 "
         }, 
         {
-            "bgColor": "#FF6347", 
+            "bgColor": "#9370DB", 
             "borderColor": "darken", 
             "labels": [
-                "DM__DMD"
+                "\u0c95\u0cca\u0ca1\u0cc1 \u0c89\u0ca6\u0cc1 "
             ], 
-            "type": "DM__DMD"
+            "type": "\u0c95\u0cca\u0ca1\u0cc1 \u0c89\u0ca6\u0cc1 "
         }, 
         {
-            "bgColor": "#FF00FF", 
+            "bgColor": "#DCDCDC", 
             "borderColor": "darken", 
             "labels": [
-                "V__VM__VNF"
+                "\u0c9c\u0cbe\u0ca4\u0cbf \u0c85\u0ca4\u0cc0\u0ca4 "
             ], 
-            "type": "V__VM__VNF"
+            "type": "\u0c9c\u0cbe\u0ca4\u0cbf \u0c85\u0ca4\u0cc0\u0ca4 "
+        }, 
+        {
+            "bgColor": "#9932CC", 
+            "borderColor": "darken", 
+            "labels": [
+                "\u0ca8\u0ca8\u0ccd\u0ca8 \u0c87\u0c82\u0ca6 "
+            ], 
+            "type": "\u0ca8\u0ca8\u0ccd\u0ca8 \u0c87\u0c82\u0ca6 "
+        }, 
+        {
+            "bgColor": "#E0FFFF", 
+            "borderColor": "darken", 
+            "labels": [
+                "\u0c97\u0cbe\u0cac\u0cb0\u0cbf \u0c86\u0ca6 "
+            ], 
+            "type": "\u0c97\u0cbe\u0cac\u0cb0\u0cbf \u0c86\u0ca6 "
         }
     ]
 };
@@ -38,84 +54,64 @@ var docData = {
     "entities": [
         [
             "T0", 
-            "DM__DMD", 
+            "\u0c9c\u0cbe\u0ca4\u0cbf \u0c85\u0ca4\u0cc0\u0ca4 ", 
             [
                 [
                     0, 
-                    1
+                    9
                 ]
             ]
         ], 
         [
             "T1", 
-            "N__NN", 
+            "\u0c95\u0cb0\u0cc6 \u0ca4\u0cb0\u0cc1 ", 
             [
                 [
-                    2, 
-                    8
+                    10, 
+                    16
                 ]
             ]
         ], 
         [
             "T2", 
-            "V__VM__VNF", 
+            "\u0c97\u0cbe\u0cac\u0cb0\u0cbf \u0c86\u0ca6 ", 
             [
                 [
-                    9, 
-                    21
+                    17, 
+                    25
                 ]
             ]
         ], 
         [
             "T3", 
-            "N__NN", 
+            "\u0ca8\u0ca8\u0ccd\u0ca8 \u0c87\u0c82\u0ca6 ", 
             [
                 [
-                    22, 
-                    29
+                    48, 
+                    55
                 ]
             ]
         ], 
         [
             "T4", 
-            "N__NN", 
+            "\u0c96\u0c9a\u0cbf\u0ca4 \u0c86\u0c97\u0cbf\u0ca6\u0cc6 ", 
             [
                 [
-                    30, 
-                    34
+                    56, 
+                    66
                 ]
             ]
         ], 
         [
             "T5", 
-            "N__NN", 
+            "\u0c95\u0cca\u0ca1\u0cc1 \u0c89\u0ca6\u0cc1 ", 
             [
                 [
-                    35, 
-                    42
-                ]
-            ]
-        ], 
-        [
-            "T6", 
-            "V__VM__VNF", 
-            [
-                [
-                    43, 
-                    51
-                ]
-            ]
-        ], 
-        [
-            "T7", 
-            "V__VM__VF", 
-            [
-                [
-                    52, 
-                    56
+                    67, 
+                    75
                 ]
             ]
         ]
     ], 
-    "text": "\u0c86 \u0c9c\u0cbf\u0c82\u0c95\u0cc7\u0ca8 \u0c85\u0c9f\u0ccd\u0c9f\u0cbf\u0cb8\u0cbf\u0c95\u0cca\u0c82\u0ca1\u0cc1 \u0cae\u0ca8\u0cc6\u0caf\u0cbf\u0c82\u0ca6 \u0c92\u0ca1\u0cb5\u0cc6 \u0ca6\u0cc2\u0cb0\u0c95\u0ccd\u0c95\u0cc6 \u0c95\u0cb0\u0ccd\u0c95\u0cca\u0c82\u0ca1\u0cc1 \u0cb9\u0ccb\u0c97\u0cbf"
+    "text": "\u0c9c\u0cbe\u0ca4\u0ccd\u0caf\u0cbe\u0ca4\u0cc0\u0ca4 \u0c95\u0cb0\u0cc6\u0ca6\u0cb0\u0cc1 \u0c97\u0cbe\u0cac\u0cb0\u0cbf\u0caf\u0cbe\u0ca6 \u0c8f\u0cb3\u0cc6\u0c82\u0c9f\u0cc1 \u0cb8\u0cbe\u0cb0\u0cbf\u0ca6 \u0c87\u0cb0\u0cc1\u0cb5\u0cc6\u0c97\u0cb3\u0cc1 \u0ca8\u0ca8\u0ccd\u0ca8\u0cbf\u0c82\u0ca6 \u0c96\u0c9a\u0cbf\u0ca4\u0cb5\u0cbe\u0c97\u0cbf\u0ca6\u0cc6 \u0c95\u0cca\u0ca1\u0cc1\u0cb5\u0cc1\u0ca6\u0cc1"
 };

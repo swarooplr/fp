@@ -5,7 +5,8 @@ from english_annotators.stemming import stem
 from english_annotators.lemmtize import lem
 from english_annotators.postagging import pos
 from kannada_annotators.postagging import pos as kn_pos
-
+from kannada_annotators.textsummarization import summarize
+from kannada_annotators.sandhi_splitting_main import sandhi_split
 app = Flask(__name__,static_url_path="")
 app._static_folder = "static"
 
@@ -36,7 +37,7 @@ def getvalue():
                 stemtag=stem(textval)
                 return render_template("disp.html",text=stemtag)
             elif task =="lem":
-                lemtag=lem(textval)
+                lemtag=sandhi_split(textval)
                 return render_template("disp.html",text=lemtag)
 
             # elif task=="wordnet":

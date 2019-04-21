@@ -63,6 +63,19 @@ def generate_summary(article, top_n=5):
 
     return ' '.join(summarize_text)
 
+def summarize(textdata):
+    summary = ""
+    try:
+        summary = generate_summary(textdata)
+        print(summary)
+    except:
+        pass
+    # call summarization_ui
+
+    return summary
+
+
+
 
 
 # healthDoc=codecs.open("/home/rakshith/PycharmProjects/NaturalLanguage/sports.txt",encoding="utf-8").read().split('+')
