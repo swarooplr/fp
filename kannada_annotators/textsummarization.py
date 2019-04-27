@@ -6,6 +6,7 @@ from nltk.cluster.util import cosine_distance
 import numpy as np
 from nltk import  sent_tokenize
 import  codecs
+from kannada_brat import summarization_ui
 import networkx as nx
 
 
@@ -71,6 +72,7 @@ def summarize(textdata):
     except:
         pass
     # call summarization_ui
+    summarization_ui.buid_brat(summary)
 
     return summary
 

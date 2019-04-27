@@ -1,12 +1,15 @@
 from flask import Flask, render_template, request
 from english_annotators.postagging import pos
-from english_annotators.ner import process_content
 from english_annotators.stemming import stem
 from english_annotators.lemmtize import lem
 from english_annotators.postagging import pos
+from english_annotators.ner import ner
 from kannada_annotators.postagging import pos as kn_pos
 from kannada_annotators.textsummarization import summarize
 from kannada_annotators.sandhi_splitting_main import sandhi_split
+from kannada_annotators.text_classification import classify
+from kannada_annotators.gender_classification import classify_gender
+from kannada_annotators.coreference import coreference
 app = Flask(__name__,static_url_path="")
 app._static_folder = "static"
 
@@ -30,11 +33,11 @@ def getvalue():
                 tagged=kn_pos(textval)
                 return render_template("disp.html", text=tagged)
             elif task=="ner":
-                nertagged=process_content(textval)
+                nertagged=ner(textval)
 
                 return render_template("disp.html", text=nertagged)
             elif task=="stem":
-                stemtag=stem(textval)
+                stemtag=coreference(textval)
                 return render_template("disp.html",text=stemtag)
             elif task =="lem":
                 lemtag=sandhi_split(textval)

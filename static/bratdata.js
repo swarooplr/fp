@@ -1,52 +1,44 @@
 var collData = {
     "entity_types": [
         {
-            "bgColor": "#DCDCDC", 
+            "bgColor": "#808000", 
             "borderColor": "darken", 
             "labels": [
-                "\u0c96\u0c9a\u0cbf\u0ca4 \u0c86\u0c97\u0cbf\u0ca6\u0cc6 "
+                "Anaphor"
             ], 
-            "type": "\u0c96\u0c9a\u0cbf\u0ca4 \u0c86\u0c97\u0cbf\u0ca6\u0cc6 "
+            "type": "Anaphor"
         }, 
         {
-            "bgColor": "#4169E1", 
+            "bgColor": "#DA70D6", 
             "borderColor": "darken", 
             "labels": [
-                "\u0c95\u0cb0\u0cc6 \u0ca4\u0cb0\u0cc1 "
+                "Entity"
             ], 
-            "type": "\u0c95\u0cb0\u0cc6 \u0ca4\u0cb0\u0cc1 "
-        }, 
+            "type": "Entity"
+        }
+    ], 
+    "relation_types": [
         {
-            "bgColor": "#9370DB", 
-            "borderColor": "darken", 
-            "labels": [
-                "\u0c95\u0cca\u0ca1\u0cc1 \u0c89\u0ca6\u0cc1 "
+            "args": [
+                {
+                    "role": "Anaphor", 
+                    "targets": [
+                        "Anaphor"
+                    ]
+                }, 
+                {
+                    "role": "Entity", 
+                    "targets": [
+                        "Entity"
+                    ]
+                }
             ], 
-            "type": "\u0c95\u0cca\u0ca1\u0cc1 \u0c89\u0ca6\u0cc1 "
-        }, 
-        {
-            "bgColor": "#DCDCDC", 
-            "borderColor": "darken", 
+            "color": "purple", 
+            "dashArray": "3,3", 
             "labels": [
-                "\u0c9c\u0cbe\u0ca4\u0cbf \u0c85\u0ca4\u0cc0\u0ca4 "
+                "Co-Reference"
             ], 
-            "type": "\u0c9c\u0cbe\u0ca4\u0cbf \u0c85\u0ca4\u0cc0\u0ca4 "
-        }, 
-        {
-            "bgColor": "#9932CC", 
-            "borderColor": "darken", 
-            "labels": [
-                "\u0ca8\u0ca8\u0ccd\u0ca8 \u0c87\u0c82\u0ca6 "
-            ], 
-            "type": "\u0ca8\u0ca8\u0ccd\u0ca8 \u0c87\u0c82\u0ca6 "
-        }, 
-        {
-            "bgColor": "#E0FFFF", 
-            "borderColor": "darken", 
-            "labels": [
-                "\u0c97\u0cbe\u0cac\u0cb0\u0cbf \u0c86\u0ca6 "
-            ], 
-            "type": "\u0c97\u0cbe\u0cac\u0cb0\u0cbf \u0c86\u0ca6 "
+            "type": "Co-Reference"
         }
     ]
 };
@@ -54,64 +46,210 @@ var docData = {
     "entities": [
         [
             "T0", 
-            "\u0c9c\u0cbe\u0ca4\u0cbf \u0c85\u0ca4\u0cc0\u0ca4 ", 
+            "Entity", 
             [
                 [
                     0, 
-                    9
+                    4
                 ]
             ]
         ], 
         [
             "T1", 
-            "\u0c95\u0cb0\u0cc6 \u0ca4\u0cb0\u0cc1 ", 
+            "Anaphor", 
             [
                 [
-                    10, 
-                    16
+                    30, 
+                    33
                 ]
             ]
         ], 
         [
             "T2", 
-            "\u0c97\u0cbe\u0cac\u0cb0\u0cbf \u0c86\u0ca6 ", 
+            "Entity", 
             [
                 [
-                    17, 
-                    25
+                    23, 
+                    29
                 ]
             ]
         ], 
         [
             "T3", 
-            "\u0ca8\u0ca8\u0ccd\u0ca8 \u0c87\u0c82\u0ca6 ", 
+            "Anaphor", 
             [
                 [
-                    48, 
-                    55
+                    50, 
+                    56
+                ]
+            ]
+        ], 
+        [
+            "T0", 
+            "Entity", 
+            [
+                [
+                    0, 
+                    4
                 ]
             ]
         ], 
         [
             "T4", 
-            "\u0c96\u0c9a\u0cbf\u0ca4 \u0c86\u0c97\u0cbf\u0ca6\u0cc6 ", 
+            "Anaphor", 
             [
                 [
-                    56, 
-                    66
+                    57, 
+                    60
                 ]
             ]
         ], 
         [
             "T5", 
-            "\u0c95\u0cca\u0ca1\u0cc1 \u0c89\u0ca6\u0cc1 ", 
+            "Entity", 
             [
                 [
-                    67, 
-                    75
+                    84, 
+                    91
+                ]
+            ]
+        ], 
+        [
+            "T6", 
+            "Anaphor", 
+            [
+                [
+                    104, 
+                    110
+                ]
+            ]
+        ], 
+        [
+            "T2", 
+            "Entity", 
+            [
+                [
+                    23, 
+                    29
+                ]
+            ]
+        ], 
+        [
+            "T2", 
+            "Anaphor", 
+            [
+                [
+                    23, 
+                    29
+                ]
+            ]
+        ], 
+        [
+            "T5", 
+            "Entity", 
+            [
+                [
+                    84, 
+                    91
+                ]
+            ]
+        ], 
+        [
+            "T5", 
+            "Anaphor", 
+            [
+                [
+                    84, 
+                    91
                 ]
             ]
         ]
     ], 
-    "text": "\u0c9c\u0cbe\u0ca4\u0ccd\u0caf\u0cbe\u0ca4\u0cc0\u0ca4 \u0c95\u0cb0\u0cc6\u0ca6\u0cb0\u0cc1 \u0c97\u0cbe\u0cac\u0cb0\u0cbf\u0caf\u0cbe\u0ca6 \u0c8f\u0cb3\u0cc6\u0c82\u0c9f\u0cc1 \u0cb8\u0cbe\u0cb0\u0cbf\u0ca6 \u0c87\u0cb0\u0cc1\u0cb5\u0cc6\u0c97\u0cb3\u0cc1 \u0ca8\u0ca8\u0ccd\u0ca8\u0cbf\u0c82\u0ca6 \u0c96\u0c9a\u0cbf\u0ca4\u0cb5\u0cbe\u0c97\u0cbf\u0ca6\u0cc6 \u0c95\u0cca\u0ca1\u0cc1\u0cb5\u0cc1\u0ca6\u0cc1"
+    "relations": [
+        [
+            "R8", 
+            "Co-Reference", 
+            [
+                [
+                    "Anaphor", 
+                    "T1"
+                ], 
+                [
+                    "Entity", 
+                    "T0"
+                ]
+            ]
+        ], 
+        [
+            "R10", 
+            "Co-Reference", 
+            [
+                [
+                    "Anaphor", 
+                    "T3"
+                ], 
+                [
+                    "Entity", 
+                    "T2"
+                ]
+            ]
+        ], 
+        [
+            "R12", 
+            "Co-Reference", 
+            [
+                [
+                    "Anaphor", 
+                    "T4"
+                ], 
+                [
+                    "Entity", 
+                    "T0"
+                ]
+            ]
+        ], 
+        [
+            "R14", 
+            "Co-Reference", 
+            [
+                [
+                    "Anaphor", 
+                    "T6"
+                ], 
+                [
+                    "Entity", 
+                    "T5"
+                ]
+            ]
+        ], 
+        [
+            "R16", 
+            "Co-Reference", 
+            [
+                [
+                    "Anaphor", 
+                    "T2"
+                ], 
+                [
+                    "Entity", 
+                    "T2"
+                ]
+            ]
+        ], 
+        [
+            "R18", 
+            "Co-Reference", 
+            [
+                [
+                    "Anaphor", 
+                    "T5"
+                ], 
+                [
+                    "Entity", 
+                    "T5"
+                ]
+            ]
+        ]
+    ], 
+    "text": "\u0cb0\u0cbe\u0cae\u0ccd \u0cb6\u0cbe\u0cb2\u0cc6\u0c97\u0cc6 \u0cb9\u0ccb\u0c97\u0cc1\u0ca4\u0cbf\u0ca6\u0ca8\u0cc1. \u0caa\u0cb2\u0ccd\u0cb2\u0cb5\u0cbf \u0c85\u0cb5\u0ca8 \u0cb8\u0cb9\u0caa\u0cbe\u0ca0\u0cbf\u0caf\u0cbe\u0c97\u0cbf\u0ca6\u0cbe\u0cb3\u0cc1. \u0c85\u0cb5\u0cb3\u0cbf\u0c97\u0cc6 \u0c85\u0cb5\u0ca8 \u0cae\u0cc7\u0cb2\u0cc6 \u0caa\u0ccd\u0cb0\u0cc0\u0ca4\u0cbf \u0cb9\u0cc1\u0c9f\u0ccd\u0c9f\u0cbf\u0ca4\u0cc1.\r\n\u0cb0\u0c95\u0ccd\u0cb7\u0cbf\u0ca4\u0ccd \u0c92\u0cac\u0ccd\u0cac \u0c97\u0cbe\u0c82\u0ca1\u0cc1, \u0c85\u0cb5\u0ca8\u0cbf\u0c97\u0cc6 \u0ca8\u0cbe\u0cb0\u0cbe \u0c87\u0cb2\u0ccd\u0cb2."
 };

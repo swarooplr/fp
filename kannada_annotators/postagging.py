@@ -150,7 +150,7 @@ def untag(tagged_sentence):
 
 def pos_tag(sentence):
     sentence_features = [features(sentence, index) for index in range(len(sentence))]
-    print(sentence_features)
+    # print(sentence_features)
     return list(zip(sentence, model.predict([sentence_features])[0]))
 
 
@@ -186,6 +186,7 @@ def pos(textval):
 
 # pos("hi there boys. how are you doing")
 # pos("ಆ ಜಿಂಕೇನ ಅಟ್ಟಿಸಿಕೊಂಡು ಮನೆಯಿಂದ ಒಡವೆ ದೂರಕ್ಕೆ ಕರ್ಕೊಂಡು ಹೋಗಿ .")
+# print pos(u"ರಾಮ್ ಶಾಲೆಗೆ ಹೋಗುತಿದನು. ಪಲ್ಲವಿ ಅವನ ಸಹಪಾಠಿಯಾಗಿದಾಳು. ಅವಳಿಗೆ ಅವನ ಮೇಲೆ ಪ್ರೀತಿ ಹುಟ್ಟಿತು.ರಕ್ಷಿತ್ ಒಬ್ಬ ಗಾಂಡು, ಅವನಿಗೆ ನಾರಾ ಇಲ್ಲ.")
 
 # ಆ ಜಿಂಕೇನ ಅಟ್ಟಿಸಿಕೊಂಡು ಮನೆಯಿಂದ ಒಡವೆ ದೂರಕ್ಕೆ ಕರ್ಕೊಂಡು ಹೋಗಿ .
 # data = read_csv('/home/swaroop/NLP/Kannada/datasets/postagged_data_',sep=',',encoding='utf-8')

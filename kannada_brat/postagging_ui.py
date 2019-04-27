@@ -30,7 +30,7 @@ def buid_brat(text,annotated):
         counter += 1
         search_string = text[end_index:]
 
-        print(search_string)
+        # print(search_string)
 
 
     collData = {}

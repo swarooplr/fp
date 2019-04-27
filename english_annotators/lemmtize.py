@@ -1,16 +1,24 @@
 from nltk.stem import WordNetLemmatizer
-from nltk.tokenize import sent_tokenize, word_tokenize
+from english_brat import postagging_ui
+import nltk
 
 def lem(textval):
-    new_text =textval
-    lemmatizer = WordNetLemmatizer()
-    words = word_tokenize(new_text)
+    tokens = nltk.word_tokenize(textval, preserve_line=False)
 
     tagged = []
-    for w in words:
-        tagged.append(lemmatizer.lemmatize(w))
+    for i in tokens:
+        try:
+            w = WordNetLemmatizer().lemmatize(i)
+            tagged.append((i, w))
+        except Exception as e:
+            print(e)
+            pass
+
+    postagging_ui.buid_brat(textval, tagged)
     return tagged
 
+
+# lem("Going gets tough we break down.")
 
 
 

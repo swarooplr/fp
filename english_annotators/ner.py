@@ -1,14 +1,18 @@
-from nltk.tag import StanfordNERTagger
-from nltk.tokenize import word_tokenize
-def process_content(textval):
+import nltk
+from english_brat import postagging_ui
 
-        st = StanfordNERTagger('/home/sourabh/project/stanford-ner-2015-04-20/classifiers/english.all.3class.distsim.crf.ser.gz',
-                               '/home/sourabh/project/stanford-ner-2015-04-20/stanford-ner.jar',
-                               encoding='utf-8')
+def ner(textval):
 
-        #text = 'While in France, Christine Lagarde discussed short-term stimulus efforts in a recent interview with the Wall Street Journal.'
+    tagged = []
 
-        tokenized_text = word_tokenize(textval)
-        classified_text = st.tag(tokenized_text)
+    for sent in nltk.sent_tokenize(textval):
+        for chunk in nltk.ne_chunk(nltk.pos_tag(nltk.word_tokenize(sent))):
+            if hasattr(chunk, 'label'):
+                tagged.append((' '.join(c[0] for c in chunk),chunk.label()))
+                print(chunk.label(), ' '.join(c[0] for c in chunk))
 
-        return classified_text
+    postagging_ui.buid_brat(textval, tagged)
+    return tagged
+
+# process_content("hi")
+

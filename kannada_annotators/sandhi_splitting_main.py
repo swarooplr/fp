@@ -37,7 +37,7 @@ def single_split(word,root):
 
     if True:
     #if not root.is_present(word):
-        for func in (aagama, lopa, aadesha, savarnadeerga, guna, vurdhi, yann):
+        for func in (lopa,aagama, aadesha, savarnadeerga, guna, vurdhi, yann):
             splits = func(root, word)
             if len(splits) != 0:
                 return splits[0]
@@ -54,7 +54,7 @@ def mulitiple_split(word,root,combined):
     # if len(splits) > 0:return splits
 
 
-    for func in (aagama,lopa,aadesha,savarnadeerga,guna,vurdhi,yann):
+    for func in (lopa,aagama,aadesha,savarnadeerga,guna,vurdhi,yann):
             splits = func(combined,word)
             if len(splits) != 0:
                     splits = splits[0]
