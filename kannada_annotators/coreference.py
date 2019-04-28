@@ -1,19 +1,25 @@
 # -*- coding: utf-8 -*-
 
-import sys
+import sys,os,codecs
 from kannada_annotators import postagging
 from kannada_annotators import gender_classification
 from kannada_annotators import sandhi_splitting_main
 from kannada_brat import coreference_ui
 
 def coreference(textval):
-
     pos_tag = postagging.pos(textval)
     proper_noun_list = []
     pronoun_list = []
-
-    boys_name = [u'ರಕ್ಷಿತ್']
-    girls_name = [u'ಪಲ್ಲವಿ']
+    boys_name_file = codecs.open(os.path.join(os.path.dirname(__file__), '../misc/boysnamesKN'),encoding='utf-8').readlines()
+    girls_name_file = codecs.open(os.path.join(os.path.dirname(__file__), '../misc/girlsnamesKN'),encoding='utf-8').readlines()
+    boys_name=[]
+    girls_name=[]
+    for boys in boys_name_file:
+        boys_name.append(boys)
+    for  girls in girls_name_file:
+        girls_name.append(girls)
+    map(unicode,boys_name)
+    map(unicode,girls_name)
 
     for token in pos_tag:
 
@@ -30,8 +36,8 @@ def coreference(textval):
         if token[1] in ["PR__PRC","PR__PRF","PR__PRI","PR__PRP","PP__PRQ"]:
             pronoun_list.append(token[0])
 
-    male_pronoun_list = {u'ಅವನಿಂದ',u'ಅವನಿಂದಾಗಿ',u'ಅವನು',u'ಅವನಿಗೆ',u'ಅವನ'}
-    female_pronoun_list = {u'ಅವಳು',u'ಅವಳಿಗೆ'}
+    male_pronoun_list = {u'ಅವನಿಂದ',u'ಅವನಿಂದಾಗಿ',u'ಅವನು',u'ಅವನಿಗೆ',u'ಅವನ',u'ಅವನನ್ನು',u'ಅವನಿಗೋಸ್ಕರ',u'ಅವನಲ್ಲಿ'}
+    female_pronoun_list = {u'ಅವಳು',u'ಅವಳಿಗೆ',u'ಅವಳು',u'ಅವಳಿಂದ',u'ಅವಳಿಗೋಸ್ಕರ',u'ಅವಳನ್ನು',u'ಅವಳಲ್ಲಿ'}
 
     #classify as male or female
     gender_tagged_propernoun = gender_classification.classify_gender(' '.join(proper_noun_list))
@@ -90,10 +96,9 @@ def coreference(textval):
     for i in coreference_cordinates:
         print(textval[i[0]:i[1]])
         print(textval[i[2]:i[3]])
-
-
     coreference_ui.buid_brat(textval,coreference_cordinates)
+    return "rakki"
 
 
 
-# coreference(u'ರಾಮ್ ಶಾಲೆಗೆ ಹೋಗುತಿದನು. ಪಲ್ಲವಿ ಅವನ ಸಹಪಾಠಿಯಾಗಿದಾಳು. ಅವಳಿಗೆ ಅವನ ಮೇಲೆ ಪ್ರೀತಿ ಹುಟ್ಟಿತು. ರಕ್ಷಿತ್ ಒಬ್ಬ ಗಾಂಡು, ಅವನಿಗೆ ನಾರಾ ಇಲ್ಲ.')
+# coreference(u'ರಾಮ್ ಶಾಲೆಗೆ ಹೋಗುತಿದನು. ಪಲ್ಲವಿ ಅವನ ಸಹಪಾಠಿಯಾಗಿದಾಳು. ಅವಳಿಗೆ ಅವನ ಮೇಲೆ ಪ್ರೀತಿ ಹುಟ್ಟಿತು. ')
