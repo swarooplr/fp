@@ -22,6 +22,7 @@ def classify_gender(textval):
         model = pickle.load(f)
 
     tokens = nltk.word_tokenize(textval, preserve_line=False)
+
     tagged = []
     for i in tokens:
         try:

@@ -33,9 +33,7 @@ def getvalue():
         if request.method=='POST':
             task = request.form['tasks']
             language=request.form.get('language')
-            lngdetect=langdetect.detect(textval)
-
-            if language=="English" and lngdetect=="en":
+            if language=="English":
                 if task == "pos":
                     tagged=en_pos(textval)
                     return render_template("disp.html",text=tagged)
@@ -51,7 +49,7 @@ def getvalue():
                 elif task=="coref":
                     return render_template("disp.html", text=" ")
 
-            elif language=="Kannada" and lngdetect=="kn":
+            elif language=="Kannada":
                 if task=="pos":
                     tagged=kn_pos(textval)
                     return render_template("disp.html", text=tagged)
@@ -70,8 +68,7 @@ def getvalue():
                 elif task=="coref":
                     coref=kn_coref(textval)
                     return render_template("disp.html")
-            else:
-                return  render_template("error.html")
+
 
 
 if __name__ == '__main__':
