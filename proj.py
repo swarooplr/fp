@@ -1,5 +1,4 @@
 from flask import Flask, render_template, request
-import  langdetect
 #English libraries
 
 from english_annotators.postagging import pos as en_pos
