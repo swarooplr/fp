@@ -6,6 +6,7 @@ import os
 from kannada_brat import postagging_ui
 from kannada_annotators import Trie,Word
 from sklearn_crfsuite import CRF
+import re
 from pandas import read_csv
 
 
@@ -170,16 +171,47 @@ def pos(textval):
                 global model
                 model = pickle.load(f)
 
+            noun_regex="^N__.*$"
+            pronoun_regex="^PR__.*$"
+            adjective_regex="^JJ__.*$"
+            punc_regex="^RD__.*$"
+            verb_regex="^V__.*$"
+            number_regex="^QT__.*$"
+            conjunction_regex="^CC__.*$"
+            adverb_regex="^(RB|RB__).*$"
 
 
             tokenized = nltk.word_tokenize(textval,preserve_line=False)
             tagged = pos_tag(tokenized)
-            # print(tagged)
+            print tagged
+            modified_tags=[]
+            for data in tagged:
+                data=list(data)
+                if re.search(noun_regex,data[1]):
+                    data[1]="Noun"
+                elif re.search(pronoun_regex,data[1]):
+                    data[1]="Pronoun"
+                elif re.search(adjective_regex, data[1]):
+                    data[1] = "Adjective"
+                elif re.search(punc_regex, data[1]):
+                    data[1] = "Punctuation"
+                elif re.search(verb_regex, data[1]):
+                    data[1] = "Verb"
+                elif re.search(number_regex,data[1]):
+                    data[1]="Number"
+                elif re.search(conjunction_regex, data[1]):
+                    data[1] = "Conjunction"
+                elif re.search(adverb_regex, data[1]):
+                    data[1] = "Adverb"
+                modified_tags.append(tuple(data))
+            print(modified_tags)
         except Exception as e:
             print(str(e))
 
         postagging_ui.buid_brat(textval, tagged)
+
         return tagged
+
 
 
 
